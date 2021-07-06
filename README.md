@@ -27,5 +27,5 @@ sudo pacman -S storj
 * Run uplink ;)
 
 ```
-uplink -v
+uplink version
 ```
