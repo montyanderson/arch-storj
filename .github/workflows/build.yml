@@ -6,5 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: docker run  -v "$PWD":"$PWD" -w "$PWD" --user "$UID" archlinux:base-devel makepkg PKGBUILD
       - run: ls
