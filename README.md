@@ -10,7 +10,7 @@ Every day the official `storj/storj` repo is checked and a package built from th
 
 ## Usage
 
-Add this to your `/etc/pacman.conf` file.
+* Add this to your `/etc/pacman.conf` file.
 
 ```
 [storj]
@@ -18,6 +18,14 @@ Server = https://montyanderson.github.io/arch-storj/$arch
 SigLevel = Never
 ```
 
+* Install the `storj-bin` package
+
 ```
 sudo pacman -S storj-bin
+```
+
+* Run uplink ;)
+
+```
+uplink -v
 ```
