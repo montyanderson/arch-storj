@@ -11,7 +11,7 @@ jobs:
       - run: ls
       - run: docker run -v "$PWD":"$PWD" -w "$PWD" --user "$UID" archlinux:base-devel repo-add storj.db.tar.gz storj-bin*
       - run: ls
-      - run: mkdir -p dist; mv storj* dist/
+      - run: mkdir -p dist/x86_64; mv storj* dist/x86_64/
       - uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
