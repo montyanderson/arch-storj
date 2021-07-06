@@ -1,0 +1,8 @@
+name: build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker run  -v "$PWD":"$PWD" -w "$PWD" --user "$UID" -it archlinux:base-devel makepkg PKGBUILD
+      - run: ls
