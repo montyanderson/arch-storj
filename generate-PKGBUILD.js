@@ -7,7 +7,7 @@
 
 	const output = `
 _pkgname=storj
-pkgname=$_pkgname-bin
+pkgname=$_pkgname
 pkgver=${name.slice(1)}
 pkgrel=1
 pkgdesc=""

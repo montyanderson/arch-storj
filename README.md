@@ -18,10 +18,10 @@ Server = https://montyanderson.github.io/arch-storj/$arch
 SigLevel = Never
 ```
 
-* Install the `storj-bin` package
+* Install the `storj` package
 
 ```
-sudo pacman -S storj-bin
+sudo pacman -S storj
 ```
 
 * Run uplink ;)
