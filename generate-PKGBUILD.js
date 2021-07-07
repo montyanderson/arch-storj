@@ -3,13 +3,16 @@
 	const [ release ] = await (await fetch("https://api.github.com/repos/storj/storj/releases")).json();
 
 	const { name } = release;
-	const { browser_download_url } = release.assets.find(asset => asset.name === "uplink_linux_amd64.zip");
+	const currentVersion = await (await fetch("https://montyanderson.github.io/arch-storj/version")).text();
 
-	if(await Deno.readTextFile("./version").trim() === name.slice(1).trim()) {
+	if(currentVersion === name.slice(1).trim()) {
 		throw new Error("No new binary version");
 	}
 
 	await Deno.writeTextFile("./version", name.slice(1).trim());
+
+	const { browser_download_url } = release.assets.find(asset => asset.name === "uplink_linux_amd64.zip");
+
 
 	const output = `
 _pkgname=storj
