@@ -5,6 +5,12 @@
 	const { name } = release;
 	const { browser_download_url } = release.assets.find(asset => asset.name === "uplink_linux_amd64.zip");
 
+	if(await Deno.readTextFile("./version").trim() === name.slice(1).trim()) {
+		throw new Error("No new binary version");
+	}
+
+	await Deno.writeTextFile("./version", name.slice(1).trim());
+
 	const output = `
 _pkgname=storj
 pkgname=$_pkgname
