@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker run -v "$PWD":"$PWD" -w "$PWD" denoland/deno:latest run --allow-net generate-PKGBUILD.js > PKGBUILD
+      - run: docker run -v "$PWD":"$PWD" -w "$PWD" denoland/deno:latest run --allow-net --allow-write generate-PKGBUILD.js > PKGBUILD
       - run: cat PKGBUILD
       - run: docker run -v "$PWD":"$PWD" -w "$PWD" --user "$UID" archlinux:base-devel makepkg -g PKGBUILD >> PKGBUILD
       - run: cat PKGBUILD

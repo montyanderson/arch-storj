@@ -5,7 +5,7 @@
 	const { name } = release;
 	const currentVersion = await (await fetch("https://montyanderson.github.io/arch-storj/version")).text();
 
-	if(currentVersion === name.slice(1).trim()) {
+	if(currentVersion.trim() === name.slice(1).trim()) {
 		throw new Error("No new binary version");
 	}
 
